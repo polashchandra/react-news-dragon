@@ -13,7 +13,7 @@ const Leftnav = () => {
     }, []);
     return (
         <div>
-            <h1>All Caterogy</h1>
+            
             {
                 categoris.map(categori => <NavLink className='block p-4 btn mb-1 btn-outline border-none ' key={categori.id}>{categori.name}</NavLink>)
             }
