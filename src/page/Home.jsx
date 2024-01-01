@@ -4,8 +4,12 @@ import Navbar from '../shard/Navbar';
 import Leftnav from '../shard/Leftnav';
 import Rightnav from '../shard/Rightnav';
 import Newsmarqee from './Newsmarqee';
+import { useLoaderData } from 'react-router-dom';
+import Media from './Media';
 
 const Home = () => {
+    const news=useLoaderData();
+    console.log(news)
     return (
         <div>
             <Header></Header>
@@ -16,7 +20,11 @@ const Home = () => {
                     <Leftnav></Leftnav>
                 </div>
                 <div className="md:col-span-2 border">
-                    <h2 className='text-2xl'>news dragon home</h2>
+                    {
+                        news?.map(medianews => <Media 
+                            key={medianews._id} 
+                            newse={medianews}></Media>)
+                    }
                 </div>
                 <div className='border'>
                     <Rightnav></Rightnav>

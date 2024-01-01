@@ -15,7 +15,8 @@ const route=createBrowserRouter([
         children:[
             {
                 path:"/",
-                element:<Home></Home>
+                element:<Home></Home>,
+                loader:()=>("news.json")
             },
             {
                 path:"/login",
